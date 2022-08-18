@@ -69,4 +69,11 @@ const OptionImage = styled.img`
   -webkit-box-shadow: inset -1px 11px 0px 1px rgba(0,0,0,0.28);
   -moz-box-shadow: inset -1px 11px 0px 1px rgba(0,0,0,0.28);
   box-shadow: inset -1px 11px 0px 1px rgba(0,0,0,0.28);
-`
+  transition: 80ms;
+
+  &:active{
+    -webkit-box-shadow: inset -1px 15px 0px 5px rgba(0,0,0,0.3); 
+    box-shadow: inset -1px 15px 0px 5px rgba(0,0,0,0.3);
+    transform: scale(0.98);
+  }
+` 
