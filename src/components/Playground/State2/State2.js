@@ -1,33 +1,20 @@
 import React from "react";
 import styled from "styled-components";
-import { useEffect } from "react";
 
 export const State2 = (props) => {
-
-  const setStateCallback = () => {
-    console.log('heu')
-    setTimeout(() => {
-      console.log('hey')
-      props.setPlaygroundState()
-    },5000)
-  }
-  useEffect(()=>{
-    setTimeout(()=>{
-      props.setOpacity(true);setStateCallback()},2000); 
-  },[State2MainContainer])
-
+  setTimeout(()=>{props.setStateCallback()},5000)
   return (
     <State2MainContainer>
       <ResultWrapperContainer>
         <StyledTittle>YOU PICKED</StyledTittle>
-        <ResultContainer color={props.colorChanger()}>
-          <ResultImage src={props.imageChanger()}>
-          </ResultImage>
-        </ResultContainer>
-        <HouseResultContainer color={props.houseColorChanger()} opacity={props.opacity ? 1 : 0} onTransitionEnd={setStateCallback} col='2' transition=' 2s linear all;'>
-          <HouseResultImage src={props.houseImageChanger()}>
-          </HouseResultImage>
-        </HouseResultContainer>
+        <PlayerOptionContainer color={props.colorChanger()}>
+          <PlayerOptionImage src={props.imageChanger()}>
+          </PlayerOptionImage>
+        </PlayerOptionContainer>
+        <HouseOptionContainer color={props.houseColorChanger()} opacity={props.opacity ? 1 : 1} onTransitionEnd={props.setStateCallback()} col='2' transition=' 2s linear all;'>
+          <HouseOptionImage src={props.houseImageChanger()}>
+          </HouseOptionImage>
+        </HouseOptionContainer>
         <StyledTittle col='2'>HOUSE PICKED</StyledTittle>
       </ResultWrapperContainer>
     </State2MainContainer>
@@ -54,7 +41,7 @@ const ResultWrapperContainer = styled.div`
   align-items: flex-start;
 `
 
-export const ResultContainer = styled.div`
+export const PlayerOptionContainer = styled.div`
   height: 35vh;
   width: 35vh;
   background-color:${props => props.color};
@@ -68,7 +55,7 @@ export const ResultContainer = styled.div`
   grid-column:1;
 `
 
-export const ResultImage = styled.img`
+export const PlayerOptionImage = styled.img`
   height: 25vh;
   width: 25vh;
   background-color: white;
@@ -79,7 +66,7 @@ export const ResultImage = styled.img`
   box-shadow: inset -1px 11px 0px 1px rgba(0,0,0,0.28);
 `
 
-export const HouseResultContainer = styled.div`
+export const HouseOptionContainer = styled.div`
   grid-column:2;
   height: 35vh;
   width: 35vh;
@@ -92,11 +79,11 @@ export const HouseResultContainer = styled.div`
   -moz-box-shadow: inset -1px -15px 0px 0px rgba(0,0,0,0.20);
   box-shadow: inset -1px -15px 0px 0px rgba(0,0,0,0.20);
   grid-column:${props => props.col};
-  transition:${props => props.transition}
+  transition:${props => props.transition};
   opacity: ${props => props.opacity};
 `
 
-export const HouseResultImage = styled.img`
+export const HouseOptionImage = styled.img`
   height: 25vh;
   width: 25vh;
   background-color: white;

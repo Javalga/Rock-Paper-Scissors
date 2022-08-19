@@ -6,7 +6,7 @@ export const Count = (props) => {
         <CountContainer>
             <Title>SCORE</Title>
             <CountNumber>
-                0
+                {props.score}
             </CountNumber>
         </CountContainer>
     )

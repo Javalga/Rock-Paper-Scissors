@@ -6,7 +6,7 @@ import Triangle from '../../../images/bg-triangle.svg'
 export const State1 = (props) => {
   return (
     <State1MainContainer>
-      <OptionWrapperContainer>
+      <OptionsWrapperContainer>
         <OptionContainer color='#4D6AF4' top='0' left='0'>
           <OptionImage src={props.iconPaper} onClick={props.handlePickOption} ref={props.refPaper}></OptionImage>
         </OptionContainer>
@@ -17,7 +17,7 @@ export const State1 = (props) => {
           <OptionImage src={props.iconScissors} onClick={props.handlePickOption} ref={props.refScissors}></OptionImage>
         </OptionContainer>
           
-      </OptionWrapperContainer>
+      </OptionsWrapperContainer>
     </State1MainContainer>
   );
 }
@@ -35,7 +35,7 @@ const State1MainContainer = styled.div`
   background-size: 40vh;
 `
 
-const OptionWrapperContainer = styled.div`
+const OptionsWrapperContainer = styled.div`
   height: 55vh;
   width: 55vh;
   display: flex;
@@ -80,3 +80,4 @@ const OptionImage = styled.img`
     transform: scale(0.98);
   }
 ` 
+

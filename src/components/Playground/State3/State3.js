@@ -1,28 +1,28 @@
 import React from "react";
 import styled from "styled-components";
-import { State2MainContainer, ResultContainer, ResultImage, HouseResultImage, HouseResultContainer, StyledTittle } from '../State2/State2.js'
+import { State2MainContainer, PlayerOptionContainer, PlayerOptionImage, HouseOptionImage, HouseOptionContainer, StyledTittle } from '../State2/State2.js'
 
 export const State3 = (props) => {
   return (
     <State2MainContainer>
       <Stage3WrapperContainer>
       <StyledTittle>YOU PICKED</StyledTittle>
-        <ResultContainer color={props.colorChanger()}>
-          <ResultImage src={props.imageChanger()}>
-          </ResultImage>
-        </ResultContainer>
+        <PlayerOptionContainer color={props.colorChanger()}>
+          <PlayerOptionImage src={props.imageChanger()}>
+          </PlayerOptionImage>
+        </PlayerOptionContainer>
         <ResultTextContainer>
           <ResultText>
-            YOU WIN
+            {props.resultText()}
           </ResultText>
-          <PlayAgainButton>
+          <PlayAgainButton onClick={props.playAgain}>
             PLAY AGAIN
           </PlayAgainButton>
         </ResultTextContainer>
-        <HouseResultContainer col='3' opacity='1' color={props.houseColorChanger()}>
-          <HouseResultImage src={props.houseImageChanger()}>
-          </HouseResultImage>
-        </HouseResultContainer>
+        <HouseOptionContainer col='3' opacity='1' color={props.houseColorChanger()}>
+          <HouseOptionImage src={props.houseImageChanger()}>
+          </HouseOptionImage>
+        </HouseOptionContainer>
         <StyledTittle col='3'>HOUSE PICKED</StyledTittle>
       </Stage3WrapperContainer>
     </State2MainContainer>

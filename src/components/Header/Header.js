@@ -10,7 +10,7 @@ export const Header = (props) => {
                 <Logo src={logo}>
                 </Logo>
             </LogoContainer>
-            <Count>
+            <Count score={props.score}>
             </Count>
         </HeaderContainer>
     );
