@@ -1,16 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ImageRules from '../../images/image-rules.svg';
 import CloseIcon from '../../images/icon-close.svg';
 
 export const Rules = () => {
   const [showRules, setShowRules] = useState(false)
-  useEffect(
-    ()=>{
-      console.log(showRules);
-    },[Rules]
-  )
   if (showRules === false) {
     return (
       <RulesButton onClick={()=>{setShowRules(showRules => !showRules)}}>
@@ -103,4 +98,5 @@ const DarkBackground = styled.div`
   height: 100%;
   background-color: black;
   opacity:.7;
+  z-index: 99;
 `

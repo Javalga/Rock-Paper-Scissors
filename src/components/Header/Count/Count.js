@@ -6,7 +6,7 @@ export const Count = (props) => {
         <CountContainer>
             <Title>SCORE</Title>
             <CountNumber>
-                12
+                0
             </CountNumber>
         </CountContainer>
     )
@@ -29,7 +29,6 @@ const Title = styled.p`
     font-size: 1.2vw;
     letter-spacing: 2px;
     font-weight: 700;
-    margin-top
 `
 const CountNumber = styled.p`
     font-size: 5vw;
