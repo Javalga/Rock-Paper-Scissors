@@ -6,12 +6,12 @@ export const State3 = (props) => {
   return (
     <State2MainContainer>
       <Stage3WrapperContainer>
-      <StyledTittle>YOU PICKED</StyledTittle>
+        <StyledTittle>YOU PICKED</StyledTittle>
         <PlayerOptionContainer color={props.colorChanger()}>
           <PlayerOptionImage src={props.imageChanger()}>
           </PlayerOptionImage>
         </PlayerOptionContainer>
-        <ResultTextContainer>
+        <ResultTextContainer opacity={props.opacity}>
           <ResultText>
             {props.resultText()}
           </ResultText>
@@ -50,6 +50,8 @@ const ResultTextContainer = styled.div`
   align-items: center;
   flex-direction:column;
   font-size: 6vh;
+  opacity: ${props => props.opacity ? '1' : '0'};
+  transition: 1s ease-in opacity;
 `
 const ResultText = styled.p`
   font-size: 1em;

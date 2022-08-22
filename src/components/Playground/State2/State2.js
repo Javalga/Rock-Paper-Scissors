@@ -2,16 +2,15 @@ import React from "react";
 import styled from "styled-components";
 
 export const State2 = (props) => {
-  setTimeout(()=>{props.setStateCallback()},5000)
   return (
     <State2MainContainer>
-      <ResultWrapperContainer>
+      <ResultWrapperContainer animation={props.animation}>
         <StyledTittle>YOU PICKED</StyledTittle>
         <PlayerOptionContainer color={props.colorChanger()}>
           <PlayerOptionImage src={props.imageChanger()}>
           </PlayerOptionImage>
         </PlayerOptionContainer>
-        <HouseOptionContainer color={props.houseColorChanger()} opacity={props.opacity ? 1 : 1} onTransitionEnd={props.setStateCallback()} col='2' transition=' 2s linear all;'>
+        <HouseOptionContainer color={props.houseColorChanger()} opacity={props.opacity ? 1 : 1} col='2' transition='2s linear all;'>
           <HouseOptionImage src={props.houseImageChanger()}>
           </HouseOptionImage>
         </HouseOptionContainer>
@@ -32,7 +31,8 @@ export const State2MainContainer = styled.div`
 
 const ResultWrapperContainer = styled.div`
   height: 100%;
-  width: 55vw;
+  width: ${props => props.animation ? '93.3vw' : '55vw'};
+  transition: 1500ms ease-in-out all;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-row:  20% 80%;

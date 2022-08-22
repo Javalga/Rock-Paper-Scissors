@@ -31,6 +31,6 @@ const Title = styled.p`
     font-weight: 700;
 `
 const CountNumber = styled.p`
-    font-size: 5vw;
+    font-size: min(100px, 8vh);
     color: #555367;
 `

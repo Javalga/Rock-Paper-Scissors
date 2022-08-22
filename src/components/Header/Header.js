@@ -17,7 +17,7 @@ export const Header = (props) => {
 }
 
 const HeaderContainer = styled.header`
-    width: 50vw;
+    min-width: 50vw;
     height: 25vh;
     border: 4px solid rgb(230, 230, 231);
     border-radius: 30px;

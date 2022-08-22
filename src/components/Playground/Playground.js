@@ -4,7 +4,6 @@ import { State1 } from './State1/State1.js'
 import { State2 } from './State2/State2.js'
 import { State3 } from './State3/State3.js'
 
-
 export const Playground = (props) => {
   if (props.playgroundState === 1) {
     return (
@@ -16,7 +15,8 @@ export const Playground = (props) => {
           handlePickOption={props.handlePickOption}
           refPaper={props.paper}
           refRock={props.rock}
-          refScissors={props.scissors}>
+          refScissors={props.scissors}
+          >
         </State1>
       </PlaygroundMainContainer>
     );
@@ -36,7 +36,7 @@ export const Playground = (props) => {
           houseImageChanger={props.houseImageChanger}
           colorChanger={props.colorChanger}
           imageChanger={props.imageChanger}
-          setStateCallback={props.setStateCallback}>
+          animation={props.animation}>
         </State2>
       </PlaygroundMainContainer>
     )
@@ -65,7 +65,7 @@ const PlaygroundMainContainer = styled.div`
   display:flex;
   align-items: center;
   margin: auto;
-  width: 100vw;
+  min-width: 100vw;
   height: 100vh;
   z-index: 9;
 `
